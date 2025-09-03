@@ -1,6 +1,7 @@
 package PageObjects;
 
 import BaseTest.BaseClass;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -98,7 +99,7 @@ public class ProductPagePostPaid extends BaseClass {
     @FindBy(xpath = "//*[text()=\"Validate\"]")
     WebElement ValidateKYC;
 
-    @FindBy(xpath = "//button[text()=\"OK\"]")
+    @FindBy(xpath = "(//button[text()=\"OK\"])[1]")
     WebElement OKButton;
 
     @FindBy(xpath = "//*[@id=\"download_fab\"]")
@@ -182,7 +183,8 @@ public class ProductPagePostPaid extends BaseClass {
     }
 
     public void clickReadOCR() {
-        ReadOCR.click();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();",ReadOCR);
     }
 
     public void clickContactNumber(String number) {

@@ -23,8 +23,11 @@ public class BaseClass {
             WebDriverManager.chromedriver().setup();
 
             ChromeOptions options = new ChromeOptions();
-            options.setAcceptInsecureCerts(true); // ✅ Ignore SSL errors
-
+            options.setAcceptInsecureCerts(true);// ✅ Ignore SSL errors
+            options.addArguments("--headless");
+            options.addArguments("--window-size=1920,1080");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--disable-software-rasterizer");
             driver = new ChromeDriver(options); // pass options here
         }
         else if (browser.equalsIgnoreCase("firefox")) {

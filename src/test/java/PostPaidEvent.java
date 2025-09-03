@@ -52,6 +52,7 @@ public class PostPaidEvent extends BaseClass {
         upload.uploadIDProof(ReadPropertyFile.getProperty1("fileName"));
         upload.uploadSelfie(ReadPropertyFile.getProperty1("fileName2"));
         pack.Toggle_The_OCR();
+        Thread.sleep(3000);
         pack.clickReadOCR();
         pack.clickContactNumber(ReadPropertyFile.getProperty1("Contact"));
 //        pack.clickEmailAddress(ReadPropertyFile.getProperty1("Email"));
@@ -77,6 +78,7 @@ public class PostPaidEvent extends BaseClass {
 
 //        pack.clickDownloadFAB();
         upload.uploadFABDocument(ReadPropertyFile.getProperty1("fileName3"));
+        Thread.sleep(2000);
         pack.clickOKButton();
         pack.clickAddToCartCTA();
         Thread.sleep(2000);
